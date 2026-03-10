@@ -1,0 +1,36 @@
+// // Class	Purpose
+// ifstream	Input file stream (read from file)
+// ofstream	Output file stream (write to file)
+// fstream	Both input and output operations
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    ofstream file("shivam.txt");
+    file<<"Hello world\nwhat a pleasnt day";
+    file.close();
+
+    // here file and readfile are objects created
+    ifstream readfile("shivam.txt");
+    string text;
+    // readfile>>text;
+    if(readfile.is_open())
+    {
+        getline(readfile,text);//getline(cin(here command),str(teh variable to store))
+        cout<<text<<endl;
+        readfile.close();
+    }
+    ifstream readfile2("shivam.txt");
+    string text2;
+    readfile.seekg(0);
+    while(getline(readfile2,text2))
+    {
+        cout<<text2<<endl;
+    }
+
+
+    return 0;
+}
